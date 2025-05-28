@@ -46,13 +46,13 @@ def get_financial_expert_analysis(stock_info):
     expert_chain = LLMChain(llm=llm, prompt=expert_prompt)
     return expert_chain.run(stock_info=stock_info)
 
-# Main execution
-query = "Give me detailed insights about bajaj finance stock including trend and metrics"
-response = ask_stock_question(query)
+# # Main execution
+# query = "Give me detailed insights about bajaj finance stock including trend and metrics"
+# response = ask_stock_question(query)
 
-print("\n=== BASIC STOCK ANALYSIS ===")
-print(response['output'])
+# print("\n=== BASIC STOCK ANALYSIS ===")
+# print(response['output'])
 
-print("\n=== FINANCIAL EXPERT ANALYSIS ===")
-expert_analysis = get_financial_expert_analysis(response['output'])
-print(expert_analysis)
+# print("\n=== FINANCIAL EXPERT ANALYSIS ===")
+# expert_analysis = get_financial_expert_analysis(response['output'])
+# print(expert_analysis)

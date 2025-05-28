@@ -44,6 +44,22 @@ def get_stock_analysis(query: str):
         "expert": expert_analysis
     }
 
+# Remove the immediate execution code at the bottom
+# and replace with:
+
+def get_stock_analysis(query: str):
+    from ai_stock_agent import ask_stock_question
+    
+    response = ask_stock_question(query)
+    expert_analysis = get_financial_expert_analysis(response['output'])
+    
+    return {
+        "basic": response['output'],
+        "expert": expert_analysis
+    }
+
+# Remove the code that calls these functions immediately
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
